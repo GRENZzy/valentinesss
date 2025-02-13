@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoorthi, Will You Be My Valentine? 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background: url('https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            transition: background 1s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #FFD700;
+            letter-spacing: 5px;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: fadeIn 2s forwards 0.5s;
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .button {
+            background-color: #FFD700;
+            color: #000;
+            font-size: 1.4rem;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #e6b800;
+            transform: translateY(-5px);
+        }
+
+        .button:active {
+            transform: translateY(1px);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroll Animation */
+        .fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .luxury-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            opacity: 0;
+            animation: floatText 6s ease-in-out infinite;
+        }
+
+        @keyframes floatText {
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { transform: translateY(-15px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.5; }
+        }
+
+        /* High-end effect for buttons and visuals */
+        .button-container {
+            position: relative;
+        }
+        .luxury-button {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #FFD700;
+            font-size: 1.6rem;
+            padding: 15px 40px;
+            border-radius: 30px;
+            background-color: transparent;
+            border: 2px solid #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .luxury-button:hover {
+            background-color: #FFD700;
+            color: #000;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="luxury-background"></div>
+    <div class="floating-elements">
+        Will You Be My Valentine? 💖
+    </div>
+
+    <h1>Spoorthi, Will You Be My Valentine? 💖</h1>
+
+    <div class="buttons">
+        <div class="button-container">
+            <button class="button fadeInUp" onclick="showEffect('yes')">Yes! 💘</button>
+            <button class="luxury-button fadeInUp" onclick="showEffect('absolutely')">Absolutely Yes! ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        function showEffect(type) {
+            if (type === 'yes') {
+                document.body.style.background = 'url("https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif") no-repeat center center/cover';
+                alert("Yay! You made my day, Spoorthi! 💖");
+            }
+            if (type === 'absolutely') {
+                document.body.style.background = 'url("https://media.giphy.com/media/3o6Zt0nFRe0h59eqcQ/giphy.gif") no-repeat center center/cover';
+                alert("You’re my Valentine, Spoorthi! ❤️💖");
+            }
+        }
+
+        // Create Floating Elements (High-End Visuals)
+        document.body.addEventListener('mousemove', (e) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'floating-elements';
+            bubble.style.left = `${e.pageX - 50}px`;
+            bubble.style.top = `${e.pageY - 50}px`;
+            document.body.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 2000);
+        });
+    </script>
+</body>
+</html>
